@@ -3,6 +3,14 @@
       {
         "label": "Week 01",
         "url": "week1/index.html"
+      },
+      {
+        "label": "Week 02",
+        "url": "week2/index.html"
+      },
+      {
+        "label": "Week 03",
+        "url": "week3/index.html"
       }
     ]
 }
