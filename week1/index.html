@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 1</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+        <h1>WDD 330 Week 1</h1>
+    </header>
+
+    <main>
+      <h2>Notes</h2>
+
+      <p>Code to fetch data from JSON file and populate the ordered list</p>
+
+      <pre>
+document.addEventListener("DOMContentLoaded", function () {
+  const toc_url = "json/toc.json";
+
+  fetch(toc_url)
+    .then((response) => response.json())
+    .then((json_object) => {
+      const toc_list = document.querySelector("#toc");
+  
+      for (item of json_object.links) {
+        const li_element = document.createElement("li");
+
+        const anchor_element = document.createElement('a');
+      
+        anchor_element.href = item.url;
+      
+        anchor_element.innerText = item.label;
+      
+        li_element.appendChild(anchor_element);
+      
+        toc_list.appendChild(li_element);
+      
+      }
+    });
+});
+      </pre>
+    </main>
+
+    <footer>
+        Naif Amoodi - WDD 330
+    </footer>
+  </body>
+</html>

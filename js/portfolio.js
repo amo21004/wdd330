@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((json_object) => {
         const toc_list = document.querySelector("#toc");
     
-        for (temple of json_object.links) {
+        for (item of json_object.links) {
           const li_element = document.createElement("li");
   
           const anchor_element = document.createElement('a');
 
-          anchor_element.href = temple.link;
+          anchor_element.href = item.url;
 
-          anchor_element.innerText = temple.label;
+          anchor_element.innerText = item.label;
 
           li_element.appendChild(anchor_element);
 
