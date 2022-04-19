@@ -1,8 +1,8 @@
 {
-    "links": [
-      {
-        "label": "Week 01",
-        "url": "week1/index.html"
-      }
-    ]
+  "links": [
+    {
+      "label": "Week 01",
+      "url": "week1/index.html"
+    }
+  ]
 }
