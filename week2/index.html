@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 2</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WDD 330 Week 2</h1>
+    </header>
+
+    <main>
+      <h2>Examples</h2>
+
+      <h3>Demonstration of scopes</h3>
+
+      <h4>Code</h4>
+
+      <pre class="code">
+const output = document.getElementsByClassName('output')[0];
+
+let i = 1;
+
+output.append(`Outer block: i = ${i}\n`);
+
+{
+  let i = 2;
+
+  output.append(`Inner block: i = ${i}\n`);
+}
+
+output.append(`Outer block: i = ${i}\n`);
+      </pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-scope"></pre>
+
+      <h3>Demonstration of arrow function</h3>
+
+      <h4>Code</h4>
+
+      <pre class="code">
+const output_arrow = document.getElementsByClassName('output-arrow')[0];
+
+const sqrt = x => x ** 0.5;
+
+output_arrow.append(`Square root of 2: ${sqrt(2)}\n`);
+
+output_arrow.append(`Square root of 3: ${sqrt(3)}\n`);
+
+output_arrow.append(`Square root of 4: ${sqrt(4)}\n`);
+      </pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-arrow"></pre>
+
+
+
+
+      <h3>Demonstration of filter functions/h3>
+
+      <h4>Code</h4>
+
+      <pre class="code">
+const output_filter = document.getElementsByClassName('output-filter')[0];
+
+const names = ['Liam', 'Noah', 'Olivia', 'Emma', 'Ava', 'Elijah', 'William', 'Charlotte', 'Sophia', 'James', 'Amelia', 'Benjamin', 'Isabella', 'Lucas', 'Henry', 'Alexander']
+
+output_filter.append(`Names starting with A: ${names.filter(name => name.toLowerCase().startsWith('a'))}`)
+      </pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-filter"></pre>
+    </main>
+
+    <footer>Naif Amoodi - WDD 330</footer>
+
+    <script>
+      const output_scope = document.getElementsByClassName('output-scope')[0];
+      
+      let i = 1;
+    
+      output_scope.append(`Outer block: i = ${i}\n`);
+
+      {
+        let i = 2;
+
+        output_scope.append(`Inner block: i = ${i}\n`);
+      }
+
+      output_scope.append(`Outer block: i = ${i}\n`);
+
+
+      const output_arrow = document.getElementsByClassName('output-arrow')[0];
+
+      const sqrt = x => x ** 0.5;
+
+      output_arrow.append(`Square root of 2: ${sqrt(2)}\n`);
+
+      output_arrow.append(`Square root of 3: ${sqrt(3)}\n`);
+
+      output_arrow.append(`Square root of 4: ${sqrt(4)}\n`);
+
+      output_arrow.append(`Square root of 5: ${sqrt(5)}\n`);
+
+
+      const output_filter = document.getElementsByClassName('output-filter')[0];
+
+      const names = ['Liam', 'Noah', 'Olivia', 'Emma', 'Ava', 'Elijah', 'William', 'Charlotte', 'Sophia', 'James', 'Amelia', 'Benjamin', 'Isabella', 'Lucas', 'Henry', 'Alexander']
+
+      output_filter.append(`Names starting with A: ${names.filter(name => name.toLowerCase().startsWith('a')).join(', ')}\n`)
+
+      output_filter.append(`Names starting with E: ${names.filter(name => name.toLowerCase().startsWith('e')).join(', ')}\n`)
+    </script>
+  </body>
+</html>

@@ -29,3 +29,14 @@ header h1 {
 main {
   margin: 2rem;
 }
+
+.code {
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.output {
+  padding: 1rem;
+  border: 1px solid #aaa;
+}
