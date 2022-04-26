@@ -30,6 +30,10 @@ main {
   margin: 2rem;
 }
 
+main hr {
+  margin: 3rem 0;
+}
+
 .code {
   padding: 1rem;
   background-color: #000;
