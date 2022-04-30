@@ -29,9 +29,48 @@
     <main>
       <h2>Notes</h2>
 
-      <p>Code to fetch data from JSON file and populate the ordered list</p>
+      <h3>Notes pertaining to Mobile UX</h3>
 
-      <pre>
+      <ul>
+        <li>Use a Mobile First approach when creating the UX</li>
+        <li>All designs need to be cross-device compatible</li>
+        <li>Avoid situations that require "Responsive Retrofitting"</li>
+        <li>Reduce steps as much as possible that are required to complete a form</li>
+        <li>Focus on loading speed as many users use mobile data while surfing using a mobile device</li>
+        <li>Optimize images to use modern formats such as WEBP and minify the HTML, CSS, and JS</li>
+        <li>Considering the importance of the primary navigation menu, make sure it is highly accessible on mobile devices</li>
+        <li>Use correct field types on forms. For example, if a certain field requires a number, use the type "number" instead of "text"</li>
+        <li>Whenever using placeholders as labels, make sure to implement floating labels</li>
+        <li>Use ads sparingly and place them strategically</li>
+      </ul>
+
+      <h2>Examples</h2>
+
+      <h3>Demonstration of local storage</h3>
+
+      <h4>Code</h4>
+
+      <pre class="code">
+const output_local_storage = document.getElementsByClassName('output-local-storage')[0];
+
+let total_views = Number(localStorage.getItem('current_value'));
+
+total_views++;
+
+output_local_storage.append(`Total views: ${total_views}`)
+
+localStorage.setItem('current_value', total_views);
+      </pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-local-storage"></pre>
+
+      <hr>
+
+      <h3>Code to fetch data from JSON file and populate the ordered list</h3>
+
+      <pre class="code">
 document.addEventListener("DOMContentLoaded", function () {
   const toc_url = "json/toc.json";
 
@@ -59,5 +98,17 @@ document.addEventListener("DOMContentLoaded", function () {
     </main>
 
     <footer>Naif Amoodi - WDD 330</footer>
+
+    <script>
+      const output_local_storage = document.getElementsByClassName('output-local-storage')[0];
+
+      let total_views = Number(localStorage.getItem('current_value'));
+
+      total_views++;
+
+      output_local_storage.append(`Total views: ${total_views}`)
+
+      localStorage.setItem('current_value', total_views);
+    </script>
   </body>
 </html>
