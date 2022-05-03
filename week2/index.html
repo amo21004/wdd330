@@ -34,19 +34,23 @@
       <h4>Code</h4>
 
       <pre class="code">
-const output = document.getElementsByClassName('output')[0];
+const output_scope = document.getElementsByClassName('output-scope')[0];
 
 let i = 1;
 
-output.append(`Outer block: i = ${i}\n`);
+output_scope.append(`Outer block: i = ${i}\n`);
 
 {
   let i = 2;
 
-  output.append(`Inner block: i = ${i}\n`);
+  output_scope.append(`Inner block with local i declaration: i = ${i}\n`);
 }
 
-output.append(`Outer block: i = ${i}\n`);
+{
+  output_scope.append(`Inner block without local i declaration: i = ${i}\n`);
+}
+
+output_scope.append(`Outer block: i = ${i}\n`);
       </pre>
 
       <h4>Output</h4>
@@ -84,9 +88,11 @@ output_arrow.append(`Square root of 4: ${sqrt(4)}\n`);
       <pre class="code">
 const output_filter = document.getElementsByClassName('output-filter')[0];
 
-const names = ['Liam', 'Noah', 'Olivia', 'Emma', 'Ava', 'Elijah', 'William', 'Charlotte', 'Sophia', 'James', 'Amelia', 'Benjamin', 'Isabella', 'Lucas', 'Henry', 'Alexander']
+const names = ['Liam', 'Noah', 'Olivia', 'Emma', 'Ava', 'Elijah', 'William', 'Charlotte', 'Sophia', 'James', 'Amelia', 'Benjamin', 'Isabella', 'Lucas', 'Henry', 'Alexander'];
 
-output_filter.append(`Names starting with A: ${names.filter(name => name.toLowerCase().startsWith('a'))}`)
+output_filter.append(`Names starting with A: ${names.filter(name => name.toLowerCase().startsWith('a')).join(', ')}\n`);
+
+output_filter.append(`Names starting with E: ${names.filter(name => name.toLowerCase().startsWith('e')).join(', ')}\n`);
       </pre>
 
       <h4>Output</h4>
@@ -106,7 +112,11 @@ output_filter.append(`Names starting with A: ${names.filter(name => name.toLower
       {
         let i = 2;
 
-        output_scope.append(`Inner block: i = ${i}\n`);
+        output_scope.append(`Inner block with local i declaration: i = ${i}\n`);
+      }
+
+      {
+        output_scope.append(`Inner block without local i declaration: i = ${i}\n`);
       }
 
       output_scope.append(`Outer block: i = ${i}\n`);
@@ -127,11 +137,11 @@ output_filter.append(`Names starting with A: ${names.filter(name => name.toLower
 
       const output_filter = document.getElementsByClassName('output-filter')[0];
 
-      const names = ['Liam', 'Noah', 'Olivia', 'Emma', 'Ava', 'Elijah', 'William', 'Charlotte', 'Sophia', 'James', 'Amelia', 'Benjamin', 'Isabella', 'Lucas', 'Henry', 'Alexander']
+      const names = ['Liam', 'Noah', 'Olivia', 'Emma', 'Ava', 'Elijah', 'William', 'Charlotte', 'Sophia', 'James', 'Amelia', 'Benjamin', 'Isabella', 'Lucas', 'Henry', 'Alexander'];
 
-      output_filter.append(`Names starting with A: ${names.filter(name => name.toLowerCase().startsWith('a')).join(', ')}\n`)
+      output_filter.append(`Names starting with A: ${names.filter(name => name.toLowerCase().startsWith('a')).join(', ')}\n`);
 
-      output_filter.append(`Names starting with E: ${names.filter(name => name.toLowerCase().startsWith('e')).join(', ')}\n`)
+      output_filter.append(`Names starting with E: ${names.filter(name => name.toLowerCase().startsWith('e')).join(', ')}\n`);
     </script>
   </body>
 </html>
