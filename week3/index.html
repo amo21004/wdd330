@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 3</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WDD 330 Week 3</h1>
+    </header>
+
+    <main>
+      <h2>Notes</h2>
+
+      <h3>Object Methods: this</h3>
+
+      <ul>
+        <li>
+          A special keyword named "this" is used to access the internal
+          properties and methods of an object
+        </li>
+      </ul>
+
+      <h3>Ch5: Objects</h3>
+
+      <ul>
+        <li>
+          If it's not one of the six primitive data types then it must be an
+          object. This includes objects themselves as well as arrays and
+          functions.
+        </li>
+
+        <li>
+          Objects are copied by reference. So, if variable X holds an object and
+          variable X is assigned to a variable named Y, then both the variables
+          X and Y point to the exact same object. Y does not hold a copy of the
+          object that was heled by X. It's just a reference to the original
+          object.
+        </li>
+      </ul>
+
+      <h3>Ch6: Document Object Model</h3>
+
+      <ul>
+        <li>
+          The DOM is a representation of all the connected nodes using a tree
+          like structure
+        </li>
+        <li>
+          The DOM can be accessed using a built in object called "document"
+        </li>
+      </ul>
+
+      <h3>Ch7: Events</h3>
+
+      <ul>
+        <li>
+          Events are a part of the DOM and they are responsible for handling the
+          user's interaction with the page
+        </li>
+        <li>
+          Events make JavaScript a non-blocking language via the use of event
+          listeners
+        </li>
+      </ul>
+
+      <h2>Examples</h2>
+
+      <h3>Demonstration of <em>this</em> variable</h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-this"></pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-this"></pre>
+
+      <hr />
+
+      <h3>Demonstration of event listeners</h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-events"></pre>
+
+      <button id="click-me-button">Click me!</button>
+
+      <h4>Output</h4>
+
+      <pre class="output output-events"></pre>
+    </main>
+
+    <footer>Naif Amoodi - WDD 330</footer>
+
+    <script id="code-this">
+const output_this = document.getElementsByClassName("output-this")[0];
+
+function a_regular_function() {
+  output_this.append(
+    `Value of variable "this" inside a regular function: ${this}\n`
+  );
+}
+
+a_regular_function();
+
+const a_person_object = {
+  first_name: "Naif",
+  last_name: "Amoodi",
+  greet: function () {
+    output_this.append(
+      `Call to a_person_object.greet() which uses "this" to access property values: Hello ${this.first_name} ${this.last_name}!\n`
+    );
+  },
+};
+
+a_person_object.greet();
+
+const a_person_array = [
+  "Naif",
+  "Amoodi",
+  function () {
+    output_this.append(
+      `Call to a_person_array[2]() which uses "this" to access values of array: Hello ${this[0]} ${this[1]}!\n`
+    );
+  },
+];
+
+a_person_array[2]();
+    </script>
+
+    <script id="code-events">
+const output_events = document.getElementsByClassName("output-events")[0];
+
+const click_me_button = document.getElementById("click-me-button");
+
+let times = 1;
+
+click_me_button.addEventListener("click", function () {
+  output_events.append(
+    `I was clicked ${times} ${times == 1 ? "time" : "times"}.\n`
+  );
+
+  times++;
+});
+    </script>
+
+    <script>
+const code_this = document.getElementsByClassName("code-this")[0];
+
+code_this.innerHTML = document.getElementById("code-this").innerText;
+
+const code_events = document.getElementsByClassName("code-events")[0];
+
+code_events.innerHTML = document.getElementById("code-events").innerText;
+    </script>
+  </body>
+</html>
