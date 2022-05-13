@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 4</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WDD 330 Week 4</h1>
+    </header>
+
+    <main>
+      <h2>Notes</h2>
+
+      <h3>Ch8: Forms</h3>
+
+      <ul>
+        <li>
+          Form fields have events unique only to them
+        </li>
+        <li>
+          There are various types of fields to choose from. From generic text, to email addresses, phone numbers, dates, and more.
+        </li>
+      </ul>
+
+      <h3>Ch12: Object Oriented Programming</h3>
+
+      <ul>
+        <li>
+          Objects in JavaScipt can be created using "Constructor Functions" or using "ES6 Class Declarations"
+        </li>
+        <li>
+          The way objects and classes are dealt with in JavaScript is significantly different from other languages. This is why it's referred to as a
+          prototype-based language.
+        </li>
+      </ul>
+
+      <h3>Ch15: Modern Javascript</h3>
+
+      <ul>
+        <li>
+          Modules help create reusable code.
+        </li>
+        <li>
+          Modules can be used to write code that's loosely coupled.
+        </li>
+        <li>
+          A module should ideally be responsible for doing one thing only.
+        </li>
+      </ul>
+
+      <h2>Examples</h2>
+
+      <h3>Demonstration of a form button that prevents submission by binding to the submit event listener</h3>
+
+      <form id="form-magic-word" method="get" action="#">
+        <p><label for="magic-word">Magic Word:</label></p>
+        <p>
+          <input type="text" id="magic-word" name="magic-word" placeholder="You can't submit me unless you say the magic word..." style="width: 100%;">
+        </p>
+        
+        <button type="submit">Submit</button>
+      </form>
+
+      <h4>Code</h4>
+
+      <pre class="code code-magic-word"></pre>
+
+      <hr />
+
+      <h3>Demonstration of <em>classes and objects</em></h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-classes-and-objects"></pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-classes-and-objects"></pre>
+
+      <hr />
+
+      <h3>Demonstration of <em>modules</em></h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-modules"></pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-modules"></pre>
+    </main>
+
+    <footer>Naif Amoodi - WDD 330</footer>
+
+    <script id="code-magic-word">
+const form_magic_word = document.querySelector('#form-magic-word');
+
+const input_magic_word = document.querySelector('#form-magic-word input');
+
+form_magic_word.addEventListener('submit', function(event) {
+  if(input_magic_word.value.toLowerCase() != 'please') {
+    alert('You need to say the magic word!');
+
+    event.preventDefault();
+  }
+  else {
+    alert('You said it! I am going to submit myself after you click on the ok buttton...');
+  }
+});
+    </script>
+
+    <script id="code-classes-and-objects">
+class Person {
+  constructor(name, age) {
+    this.name = name;
+
+    this.age = age;
+  }
+
+  introduce() {
+    return `Hi! I am ${this.name} and I am ${this.age} years old!`;
+  }
+}
+
+const output_classes_and_objects = document.getElementsByClassName("output-classes-and-objects")[0];
+
+const person1 = new Person('John Doe', 25);
+
+output_classes_and_objects.append(person1.introduce());
+    </script>
+
+    <script id="code-modules" type="module">
+import { message_from_module } from './example-module.js';
+
+const output_modules = document.getElementsByClassName("output-modules")[0];
+
+output_modules.append(message_from_module);
+    </script>
+
+
+    <script>
+const code_magic_word = document.getElementsByClassName("code-magic-word")[0];
+
+code_magic_word.innerHTML = document.getElementById("code-magic-word").innerText;
+
+const code_classes_and_objects = document.getElementsByClassName("code-classes-and-objects")[0];
+
+code_classes_and_objects.innerHTML = document.getElementById("code-classes-and-objects").innerText;
+
+const code_modules = document.getElementsByClassName("code-modules")[0];
+
+code_modules.innerHTML = document.getElementById("code-modules").innerText;
+    </script>
+  </body>
+</html>

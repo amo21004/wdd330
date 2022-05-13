@@ -1,0 +1,1 @@
+export const message_from_module = 'Hello from example-module.js!';
