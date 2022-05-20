@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 5</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WDD 330 Week 5</h1>
+    </header>
+
+    <main>
+      <h2>Notes</h2>
+
+      <ul>
+        <li>Exceptions are errors that return a value and can be captured by the programmer and dealt accordingly.</li>
+        <li>Exceptions produce a stack trace which can be used to debug the problem. The stack trace shows a list of functions calls that resulted in the error.</li>
+        <li>ES5 introduced "Strict Mode" which enforces certain good practices. One such enforcement is that if an undeclared variable is assigned or referenced, it will produce a reference error.</li>
+        <li>Modules by default use "Strict Mode" and there is no way to disable this.</li>
+        <li>The alert function and console.log method are very useful while debugging.</li>
+      </ul>
+
+      <ul>
+
+      </ul>
+
+      <h3>Demonstration of exceptions and how to handle them</em></h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-exceptions"></pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-exceptions"></pre>
+
+      <hr />
+
+    </main>
+
+    <footer>Naif Amoodi - WDD 330</footer>
+
+    <script id="code-exceptions">
+const output_exceptions = document.getElementsByClassName("output-exceptions")[0];
+
+try {
+  calling_an_undefined_function();
+}
+catch(error) {
+  // it will be caught here
+  output_exceptions.append(error + "\n")
+}
+
+try {
+  console.log(non_existent_variable);
+}
+catch(error) {
+  // it will be caught here
+  output_exceptions.append(error + "\n")
+}
+
+try {
+  const some_constant = 'value';
+
+  some_constant = 'trying to change value of a constant';
+}
+catch(error) {
+  // it will be caught here
+  output_exceptions.append(error + "\n")
+}
+    </script>
+
+
+    <script>
+const code_exceptions = document.getElementsByClassName("code-exceptions")[0];
+
+code_exceptions.innerHTML = document.getElementById("code-exceptions").innerText;
+    </script>
+  </body>
+</html>
