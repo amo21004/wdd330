@@ -1,0 +1,58 @@
+body {
+    padding: 20px;
+    font-family: "Merriweather", serif;
+    color: #000;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  header,
+  footer {
+    padding: 2rem;
+    background-color: #eee;
+  }
+  header h1 {
+    margin: 0;
+  }
+  
+  main {
+    margin: 2rem;
+  }
+
+  #todos {
+    max-width: 300px;
+  }
+
+  #todos-list {
+    margin: 0 0 2rem 0; padding: 0;
+    list-style: none;
+    border: 1px solid gray;
+  }
+  #todos-list li {
+    display: flex;
+    padding: 0.25rem;
+  }
+  #todos-list li:not(:last-child) {
+    border-bottom: 1px solid gray;
+  }
+  #todos-list .status span, #todos-list .delete {
+    cursor: pointer;
+  }
+  #todos-list .status span:last-child {
+    display: none;
+  }
+  #todos-list .content {
+    flex: 1;
+    padding: 0 0.25rem;
+  }
