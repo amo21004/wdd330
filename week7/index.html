@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 7</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WDD 330 Week 7</h1>
+    </header>
+
+    <main>
+      <h2>Notes</h2>
+
+      <h3>Ch11: Further Functions</h3>
+
+      <ul>
+        <li>Functions that are expensive to run can make use of Memoization which stores the result of a call in a cache. Future calls will return the data from the cache.</li>
+        <li>IIFE - These are anonymous functions which are invoked immediately after the function expression.</li>
+        <li>IIFEs can be useful when you want to restrict the scope of variables. A variable that is declared inside an IIFE is declared when its invoked and is destroyed immediately after the execution of that function ends.</li>
+        <li>Functions in JavaScript can both define and redefine themselves.</li>
+        <li>JavaScript supports async functions that execute asynchronously.</li>        
+        <li>JavaScript supports Closures however Closures in JavaScript are not the same as Closures found in PHP.</li>
+      </ul>
+
+      <h3>Ch13: AJAX</h3>
+
+      <ul>
+        <li>AJAX stands for Asynchronous JavaScript and XML. In the past, AJAX calls usually returned a response in XML format however now its more common for them to return a response using JSON.</li>
+        <li>When using AJAX, it is important to understand Same-Origin Policy and CORS.</li>
+        <li>AJAX requests are now usually handled using the Fetch API. The fetch method returns a promise.</li>
+      </ul>
+
+      <ul>
+
+      </ul>
+
+      <h3>Demonstration of IIFE</em></h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-iife"></pre>
+
+      <h4>Output</h4>
+
+      <pre class="output output-iife"></pre>
+
+      <hr />
+
+      <h3>Demonstration of posting data using Fetch API to a dummy server</em></h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-fetch"></pre>
+
+      <h4>Create a user</h4>
+
+      <form class="fetch-form">
+        <p><input type="text" placeholder="Enter your name" name="name" required></p>
+
+        <p><input type="text" placeholder="Enter your job" name="job" required></p>
+
+        <p><input type="submit" class="fetch-submit" value="Create"></p>
+      </form>
+
+      <h4>Output</h4>
+
+      <pre class="output output-fetch"></pre>
+    </main>
+
+    <footer>Naif Amoodi - WDD 330</footer>
+
+    <script id="code-iife">
+const output_iife = document.getElementsByClassName("output-iife")[0];
+
+output_iife.append((function() {
+  return "I am an example of an IIFE.\n";
+})());
+    </script>
+
+
+  <script id="code-fetch">
+const output_fetch = document.getElementsByClassName("output-fetch")[0];
+
+const form = document.getElementsByClassName("fetch-form")[0];
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const user = new FormData(document.getElementsByClassName("fetch-form")[0]);
+
+  const headers = new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+  });
+
+  const request = new Request('  https://reqres.in/api/users', {
+      method: 'POST',
+      mode: 'cors',
+      header: headers,
+      body: JSON.stringify(user)
+  });
+
+  fetch(request)
+  .then(response => response.json())
+  .then(data => {
+    output_fetch.append(`Created user with ID ${data.id} on ${data.createdAt}\n`);
+  });
+});
+  </script>
+
+    <script>
+const code_iife = document.getElementsByClassName("code-iife")[0];
+
+code_iife.innerHTML = document.getElementById("code-iife").innerText;
+
+const code_fetch = document.getElementsByClassName("code-fetch")[0];
+
+code_fetch.innerHTML = document.getElementById("code-fetch").innerText;
+    </script>
+  </body>
+</html>

@@ -23,6 +23,10 @@
     {
       "label": "Challenge One",
       "url": "challenge-one/index.html"
-    }
+    },
+    {
+      "label": "Week 07",
+      "url": "week7/index.html"
+    },
   ]
 }
