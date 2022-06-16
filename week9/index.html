@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 9</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WDD 330 Week 9</h1>
+    </header>
+
+    <main>
+      <h2>Notes</h2>
+
+      <h3>Ch9: The Window Object</h3>
+
+      <ul>
+        <li>Inside a browser, the JavaScript global object is the "window" object.</li>
+        <li>Global variables and functions are stored as property of the window object.</li>
+        <li>The Browser Object Model stores properties and methods that contain information about the browser, the window (for example, the URL of the current page, etc.) and the screen.</li>
+        <li>The window object is different from the document object. The document object is stored as a property of the window object. However, there is no need to refer to it as window.document. Just document will work fine.</li>
+        <li>The document object represents the page that is loaded inside a window.</li>
+        <li>Cookies are useful for preserving the state considering that the HTTP is stateless.</li>
+        <li>setTimeout and setInterval are examples of two timing functions.</li>
+      </ul>
+
+      <h3>Ch14: HTML5 APIs</h3>
+
+      <ul>
+        <li>The HTML5 API includes the Web Storage API, Geolocation API, Notification API, among others.</li>
+        <li>The Web Storage API can be used like Cookies. In comparison to Cookies, the Web Storage API provides more space.</li>
+      </ul>
+
+      <h3>Demonstration of the Window object</em></h3>
+
+      <h4>Code</h4>
+
+      <pre class="code code-demo"></pre>
+
+      <button id="popup-button">Click me for an annoying popup</button>
+
+      <h4>Output</h4>
+
+      <pre class="output output-demo"></pre>
+    </main>
+
+    <footer>Naif Amoodi - WDD 330</footer>
+
+    <script id="code-demo">
+const output_demo = document.getElementsByClassName("output-demo")[0];
+
+const message = `The resolution of your monitor is ${window.screen.width}x${window.screen.height}`;
+
+output_demo.append(message);
+
+document.getElementById('popup-button').addEventListener('click', function() {
+  window.open('./popup.html', 'Annoying Popup','width=400,height=400,resizable=yes');
+});
+    </script>
+
+    <script>
+const code_demo = document.getElementsByClassName("code-demo")[0];
+
+code_demo.innerHTML = document.getElementById("code-demo").innerText;
+    </script>
+  </body>
+</html>
