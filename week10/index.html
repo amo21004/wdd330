@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 Week 10</title>
+    <meta name="description" content="Portfolio for WDD 330" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <header>
+      <h1>WDD 330 Week 10</h1>
+    </header>
+
+    <main>
+      <h2>Notes</h2>
+
+      <h3>MDN: Validating forms</h3>
+
+      <ul>
+        <li>
+          Validating form data before sending it to the server is referred to as
+          client-side form validation.
+        </li>
+        <li>
+          Client-side validation is not a substitute for server-side validation.
+          Data validated on the client-side should also be validated on the
+          server side. This is because client-side validation can easily be
+          spoofed.
+        </li>
+        <li>
+          Client-side form validation can be performed using built-in HTML5
+          validation as well as by using JavaScript.
+        </li>
+        <li>
+          HTML5 form validation provides the pattern attribute can that be used
+          to validate data using a regular expression.
+        </li>
+        <li>
+          JavaScript validation can be used with or without the built-in
+          validation API (i.e. the Constraint Validation API). Or, it can be
+          done using plain vanilla JavaScript.
+        </li>
+      </ul>
+
+      <h3>MDN: Using Fetch</h3>
+
+      <ul>
+        <li>
+          The Fetch API is a replacement for XMLHttpRequest objects. However,
+          XMLHttpRequest objects can still be used.
+        </li>
+        <li>The Fetch API provides a global fetch method.</li>
+        <li>
+          A call to the fetch method returns two promises. The first promise
+          resolves to a Response object where as the second promise resolves to
+          the body of the Response object (which in many cases is in JSON
+          format).
+        </li>
+        <li>
+          The first argument to the fetch method is the URL. The fetch method
+          also takes an optional second argument which can be used to pass
+          custom settings to the method as an object. These settings can include
+          method, mode, cache, credentials, among other settings
+        </li>
+        <li>
+          The first promise returned by the fetch method will throw a TypeError
+          if there is a network error. Otherwise it returns a Response.ok
+          property that's either set to true or false. If the HTTP response is
+          in the range of 200 to 299, the value of this property will be true,
+          otherwise, it will be false.
+        </li>
+      </ul>
+    </main>
+
+    <footer>Naif Amoodi - WDD 330</footer>
+  </body>
+</html>
