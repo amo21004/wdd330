@@ -34,7 +34,7 @@ app.innerHTML = `
 
     <h2>Holdings</h2>
 
-    <table id="holdings">
+    <div class="holdings-table"><table id="holdings">
         <thead>
             <tr>
                 <th>Currency</th>
@@ -52,7 +52,7 @@ app.innerHTML = `
             <th colspan="3">Total</th>
             <th>0</th>
         </tfoot>
-    </table>
+    </table></div>
 `;
 
 // A custom event
