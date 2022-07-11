@@ -1,0 +1,8 @@
+#add-currency input,
+#add-currency button {
+    display: block;
+}
+
+#add-currency input {
+    margin: 0 0 1rem 0;
+}

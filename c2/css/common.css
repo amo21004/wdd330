@@ -9,7 +9,8 @@ h2,
 h3,
 h4,
 h5,
-h6, th {
+h6,
+th {
   font-family: "Roboto", sans-serif;
 }
 
@@ -89,28 +90,40 @@ main button:hover svg {
 main table {
   width: 100%;
 }
+
 main table th {
   text-align: start;
 }
-main table th, main table td {
+
+main table th,
+main table td {
   padding: 0.5rem 1rem;
   border: 1px solid #fff;
 }
+
 main table .actions {
   font-size: 1.25rem;
 }
+
 main table .actions * {
   vertical-align: middle;
   cursor: pointer;
 }
+
 main table .delete {
   color: rgb(202, 58, 58);
 }
+
 main table .refresh {
   color: rgb(74, 151, 202);
 }
+
 main table .close {
   display: none;
+}
+
+.holdings-table {
+  overflow-x: auto;
 }
 
 #holdings table {
