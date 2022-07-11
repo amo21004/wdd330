@@ -1,0 +1,118 @@
+body {
+  padding: 20px;
+  font-family: "Merriweather", serif;
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, th {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+header,
+footer {
+  padding: 2rem;
+  background-color: #eee;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  padding: 2rem;
+  background-color: rgb(8, 10, 12);
+  color: rgb(243, 244, 246);
+}
+
+main h2 {
+  padding: 5px 10px;
+  background-color: rgb(41, 47, 56);
+  font-size: 1rem;
+}
+
+main form {
+  margin: 0 0 3rem 0;
+}
+
+main input {
+  margin: 0 10px 0 0;
+  padding: 5px 10px;
+  background-color: #16181d;
+  border: 1px solid #38404A;
+  border-radius: 5px;
+  color: rgb(243, 244, 246);
+}
+
+main button {
+  position: relative;
+  width: 180px;
+  height: 30px;
+  background-color: rgb(0, 145, 234);
+  border: 0;
+  border-radius: 5px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+
+main button svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+main button:hover {
+  background: #4F95DA;
+  transition: 1s ease-in-out;
+}
+
+main button:hover svg {
+  stroke-dashoffset: -480;
+}
+
+main table {
+  width: 100%;
+}
+main table th {
+  text-align: start;
+}
+main table th, main table td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #fff;
+}
+main table .actions {
+  font-size: 1.25rem;
+}
+main table .actions * {
+  vertical-align: middle;
+  cursor: pointer;
+}
+main table .delete {
+  color: rgb(202, 58, 58);
+}
+main table .refresh {
+  color: rgb(74, 151, 202);
+}
+main table .close {
+  display: none;
+}
+
+#holdings table {
+  display: none;
+}
