@@ -141,7 +141,7 @@ class Holdings {
 
         holdings_element_tfoot.innerHTML = `
             <th colspan="3">Total</th>
-            <th>${total_value}</th>
+            <th>$${total_value}</th>
         `;
 
         document.dispatchEvent(new Event("displayed"));
