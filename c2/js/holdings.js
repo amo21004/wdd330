@@ -130,7 +130,7 @@ class Holdings {
             tr_element.innerHTML = `
                 <td>${name} <span class="actions"><span class="open">➕</span> <span class="close">➖</span></span> <table><tbody>${entries}</tbody></table></td>
                 <td>${total_amount}</td>
-                <td>$ ${self.cmc.quotes[slug] * total_amount}</td>
+                <td>$${self.cmc.quotes[slug] * total_amount}</td>
                 <td class="actions"><span class="refresh" title="Refresh price">⟳</span></td>
             `;
 
